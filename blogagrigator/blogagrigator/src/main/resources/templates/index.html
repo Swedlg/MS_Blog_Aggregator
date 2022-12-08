@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            background-image: url("img/grey_lines_bg.jpg");
+        }
+
+        #main_container {
+            background-image: url("img/container_bg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div id="main_container">
+
+        <div id="container_name" align="center">
+            <h1>Агрегатор блогов</h1>
+        </div>
+
+        <form action="/" method="post" id="blog_selector_container">
+            <div id="input_blog_container">
+                <textarea id="textarea_blogs_urls" name="urls" rows="10" placeholder="Введите здесь URL блогов" autofocus>
+                </textarea>
+            </div>
+
+            <div id="button_select_container">
+                <button id="button_select" type="submit">
+                    Составить
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!--
+    <h1> Последние 50 публикаций с выбранных ресурсов:</h1>
+    <p th:text="'Привет, ' + ${name} + '!'"></p>
+    <table>
+        <tr th:each="item : ${dates}">
+            <td bgcolor="#ffcc00" th:text="${item.PublishDate}">
+            </td>
+        </tr>
+    </table>
+
+    <div th:each="item : ${dates}">
+        <div th:text="${item.PublishDate}">
+        </div>
+    </div>
+    -->
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/newest_blogs.css">
+    <style>
+        body {
+            background-image: url("img/grey_lines_bg.jpg");
+        }
+        #main_container {
+            background-image: url("img/container_bg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div id="main_container">
+
+        <div id="container_name" align="center">
+            <h1>Последние 50 блогов с выбранных ресурсов:</h1>
+        </div>
+
+        <div id="blogs_container" th:each="item : ${dates}">
+            <div id="blog_container">
+                <div >
+                    <a th:href="@{${item.Uri}}" th:text="${item.Title}"></a>
+                </div>
+                <br>
+                <div th:text="${item.Description}"></div>
+                <br>
+                <div id="blog_publish_date" th:text="${item.PublishDate}"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
